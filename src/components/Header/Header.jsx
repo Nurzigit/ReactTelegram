@@ -1,20 +1,16 @@
 import React from 'react';
 import Button from '../Button/Button';
+import { useTelegram } from './../../hooks/useTelegram';
 
 const Header = () => {
-    const tg = window.Telegram.WebApp;
-
-    const onClass = () => {
-        tg.close();
-    }
-
+const {user, onClose} = useTelegram();
     return (
         <div className={'header'}>
-            <Button onClick={onClass}>Закрыть</Button>
+            <Button onClick={onClose}>Закрыть</Button>
 
             <span className={'username'}>
                 {/* We are using optional chaining operator, because our project ain't crack */}
-                {tg.initDataUnsafe?.user?.username}
+                {user?.username}
             </span>
         </div>
     );
