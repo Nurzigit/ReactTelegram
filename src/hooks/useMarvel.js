@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import md5 from "md5";
 import axios from "axios";
 
-export const useMarvelItems = ({ type }) => {
+export const useMarvelItems = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export const useMarvelItems = ({ type }) => {
     const getAllItems = () => {
         axios
             .get(
-                `http://gateway.marvel.com/v1/public/${type}?ts=${
+                `http://gateway.marvel.com/v1/public/comics?ts=${
                     process.env.REACT_APP_TS
                 }&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${md5(
                     process.env.REACT_APP_TS +

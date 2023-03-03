@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+.card {
+    border: 1px solid var(--tg-theme-button-color) !important;
+}
+
+
+.img {
+    background: var(--tg-theme-button-color) !important;
+}
+
+.add-btn {
+    width: 100%;
+}
